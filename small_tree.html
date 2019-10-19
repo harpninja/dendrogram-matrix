@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<style>
+			body {
+						font-family: Verdana, sans-serif;
+						font-size: 8pt;
+						line-height: 12pt;
+						background: #ffffff;
+						color: #555555;
+					}
+
+			.node circle {
+			  fill: #999;
+			}
+
+			/* .node text {
+			  font: 8pt sans-serif;
+			} */
+
+			.node--internal circle {
+			  fill: #555;
+			}
+
+			.node--internal text {
+			  text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+			}
+
+			.link {
+			  fill: none;
+			  stroke: #555;
+			  stroke-opacity: 0.4;
+			  stroke-width: 1.5px;
+			}
+	</style>
+</head>
+<body>
+<script src="d3.v4.min.js"></script>
+<script>
+
+d3.json("small_cat.json", function(error, treeData) {
+  if (error) throw error;
+
+	const margin = {top: 0, right: 0, bottom: 0, left: 60, offset: 20};
+	const width = 300 - margin.left - margin.right;
+	const height = 130 - margin.top - margin.bottom;
+
+	const svg = d3.select("body").append("svg")
+			.attr("width", 2100 + margin.left + margin.right)
+			.attr("height", 8000 + margin.top + margin.bottom);
+
+	const tree = d3.cluster()
+	    .size([height, width - 120]);
+
+	const stratify = d3.stratify()
+	    .parentId(function(d) { return d.id.substring(0, d.id.lastIndexOf(".")); });
+
+	let shift_left = margin.left;
+	let shift_down = margin.top;
+	for (let this_tree in treeData)
+	{
+			let g = svg.append("g")
+					.attr("transform",
+								"translate(" + shift_left + "," + shift_down + ")");
+
+		  const root = d3.hierarchy(treeData[this_tree]);
+		  tree(root);
+
+		  const link = g.selectAll(".link")
+		      .data(root.descendants().slice(1))
+		    .enter().append("path")
+		      .attr("class", "link")
+		      .attr("d", function(d) {
+		        return "M" + d.y + "," + d.x
+		            + "C" + (d.parent.y + 40) + "," + d.x
+		            + " " + (d.parent.y + 40) + "," + d.parent.x
+		            + " " + d.parent.y + "," + d.parent.x;
+		      });
+
+		  const node = g.selectAll(".node")
+		      .data(root.descendants())
+		    .enter().append("g")
+		      .attr("class", function(d) { return "node" + (d.children ? " node--internal" : " node--leaf"); })
+		      .attr("transform", function(d) {
+		        return "translate(" + d.y + "," + d.x + ")";
+		      })
+
+		  node.append("circle")
+		      .attr("r", 2.5);
+
+		  node.append("text")
+		      .attr("dy", 3)
+		      .attr("x", function(d) { return d.children ? -8 : 8; })
+		      .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
+		      .text(function(d) {
+		        return d.data.name;
+		      });
+
+		 shift_left = shift_left + width + margin.offset;
+		 if (shift_left > 1200)
+		 {
+			 shift_left = margin.left;
+			 shift_down = shift_down + height + margin.offset;
+		 }
+	}
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+[
+{"name": "group 1",
+"description": "1 sentence description of group 1",
+"children": [
+{"name" : "classes", "children" : [
+{"name" : "class3"}, {"name" : "class5"}, {"name" : "class6"}]},
+{"name" : "things", "children" : [
+{"name" : "thing1"}, {"name" : "thing2"}, {"name" : "thing4"}, {"name" : "thing5"}]}
+]},
+{"name": "group 2",
+"description": "1 sentence description of group 2",
+"children": [
+{"name" : "classes", "children" : [
+{"name" : "class1"}]},
+{"name" : "things", "children" : [
+{"name" : "thing2"}, {"name" : "thing4"}, {"name" : "thing6"}]}
+]},
+{"name": "group 3",
+"description": "1 sentence description of group 3",
+"children": [
+{"name" : "classes", "children" : [
+{"name" : "class2"}]},
+{"name" : "things", "children" : [
+{"name" : "thing1"}, {"name" : "thing3"}, {"name" : "thing4"}, {"name" : "thing5"}, {"name" : "thing6"}]}
+]},
+{"name": "group 4",
+"description": "1 sentence description of group 4",
+"children": [
+{"name" : "classes", "children" : [
+{"name" : "class4"}]},
+{"name" : "things", "children" : [
+{"name" : "thing1"}, {"name" : "thing2"}, {"name" : "thing3"}, {"name" : "thing4"}]}
+]},
+{"name": "group 5",
+"description": "1 sentence description of group 5",
+"children": [
+{"name" : "classes", "children" : [
+{"name" : "class2"}, {"name" : "class4"}]},
+{"name" : "things", "children" : [
+{"name" : "thing5"}]}
+]},
+{"name": "group 6",
+"description": "1 sentence description of group 6",
+"children": [
+{"name" : "classes", "children" : [
+{"name" : "class1"}, {"name" : "class2"}, {"name" : "class3"}, {"name" : "class6"}]},
+{"name" : "things", "children" : [
+{"name" : "thing1"}, {"name" : "thing3"}, {"name" : "thing5"}]}
+]},
+{"name": "group 7",
+"description": "1 sentence description of group 7",
+"children": [
+{"name" : "classes", "children" : [
+{"name" : "class3"}]},
+{"name" : "things", "children" : [
+{"name" : "thing1"}, {"name" : "thing6"}]}
+]},
+{"name": "group 8",
+"description": "1 sentence description of group 8",
+"children": [
+{"name" : "classes", "children" : [
+{"name" : "class1"}, {"name" : "class5"}]},
+{"name" : "things", "children" : [
+{"name" : "thing1"}, {"name" : "thing2"}, {"name" : "thing3"}, {"name" : "thing4"}, {"name" : "thing5"}, {"name" : "thing6"}]}
+]},
+{"name": "group 9",
+"description": "1 sentence description of group 9",
+"children": [
+{"name" : "classes", "children" : [
+{"name" : "class3"}]},
+{"name" : "things", "children" : [
+{"name" : "thing2"}, {"name" : "thing3"}, {"name" : "thing4"}, {"name" : "thing5"}]}
+]},
+{"name": "group 10",
+"description": "1 sentence description of group 10",
+"children": [
+{"name" : "classes", "children" : [
+{"name" : "class2"}, {"name" : "class4"}]},
+{"name" : "things", "children" : [
+{"name" : "thing1"}, {"name" : "thing2"}, {"name" : "thing3"}]}
+]}
+]
