@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8">
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
+<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <head>
 	<style>
 			body {
-						font-family: Verdana, sans-serif;
-						font-size: 8pt;
-						line-height: 12pt;
-						background: #ffffff;
-						color: #555555;
-					}
+				font-family: 'Open Sans', sans-serif;
+				font-size: 8pt;
+				line-height: 12pt;
+				background: #ffffff;
+				color: #222222;
+				margin: 20px;
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				font-family: 'Open Sans', sans-serif;
+			}
 
 			.node circle {
 			  fill: #999;
 			}
-
-			/* .node text {
-			  font: 8pt sans-serif;
-			} */
 
 			.node--internal circle {
 			  fill: #555;
@@ -36,7 +38,10 @@
 	</style>
 </head>
 <body>
-<script src="d3.v4.min.js"></script>
+	<h1>Dendrogram Matrix</h1>
+	<p>Dendrogram Matrix for looking at lots of small hierarchies of categories. <br>
+		<a href='https://github.com/harpninja/dendrogram-matrix'>Code on GitHub</a></p>
+<script src='https://d3js.org/d3.v4.min.js'></script>
 <script>
 
 d3.json("small_cat.json", function(error, treeData) {
